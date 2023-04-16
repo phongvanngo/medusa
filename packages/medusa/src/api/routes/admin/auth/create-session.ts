@@ -81,6 +81,7 @@ export default async (req, res) => {
   const authService: AuthService = req.scope.resolve("authService")
   const manager: EntityManager = req.scope.resolve("manager")
   const result = await manager.transaction(async (transactionManager) => {
+    console.log("my novapo meduasa api auth admin");
     return await authService
       .withTransaction(transactionManager)
       .authenticate(validated.email, validated.password)
