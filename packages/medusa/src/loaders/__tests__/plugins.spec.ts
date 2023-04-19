@@ -14,7 +14,7 @@ import { createMedusaContainer } from "medusa-core-utils"
 // ***** TEMPLATES *****
 const buildServiceTemplate = (name: string): string => {
   return `
-    import { BaseService } from "medusa-interfaces"
+    import { BaseService } from "novapo-medusa-interfaces"
     export default class ${name}Service extends BaseService {}
   `
 }

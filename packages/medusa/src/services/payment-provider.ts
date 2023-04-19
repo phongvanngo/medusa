@@ -1,5 +1,5 @@
 import { isDefined, MedusaError } from "medusa-core-utils"
-import { BasePaymentService } from "medusa-interfaces"
+import { BasePaymentService } from "novapo-medusa-interfaces"
 import { EntityManager } from "typeorm"
 import {
   AbstractPaymentProcessor,

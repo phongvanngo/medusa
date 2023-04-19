@@ -10,7 +10,7 @@ import {
   FileService,
   FulfillmentService,
   OauthService,
-} from "medusa-interfaces"
+} from "novapo-medusa-interfaces"
 import { trackInstallation } from "medusa-telemetry"
 import path from "path"
 import { EntitySchema } from "typeorm"

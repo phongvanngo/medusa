@@ -1,5 +1,5 @@
 import { MedusaError } from "medusa-core-utils"
-import BaseFulfillmentService from "medusa-interfaces"
+import BaseFulfillmentService from "novapo-medusa-interfaces"
 import { EntityManager } from "typeorm"
 import { TransactionBaseService } from "../interfaces"
 import {

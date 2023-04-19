@@ -81,6 +81,7 @@ export default async (req, res) => {
   const authService: AuthService = req.scope.resolve("authService")
   const manager: EntityManager = req.scope.resolve("manager")
   const result = await manager.transaction(async (transactionManager) => {
+    console.log("new version of medusajs/medusa v34");
     return await authService
       .withTransaction(transactionManager)
       .authenticate(validated.email, validated.password)

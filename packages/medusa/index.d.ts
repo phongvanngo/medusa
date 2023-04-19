@@ -1,1 +1,1 @@
-declare module "medusa-interfaces"
+declare module "novapo-medusa-interfaces"

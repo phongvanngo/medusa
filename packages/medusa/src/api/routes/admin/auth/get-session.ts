@@ -52,11 +52,25 @@ import _ from "lodash"
  */
 export default async (req, res) => {
   try {
-    const userService: UserService = req.scope.resolve("userService")
-    const user = await userService.retrieve(req.user.userId)
+    // const userService: UserService = req.scope.resolve("userService")
+    // const user = await userService.retrieve(req.user.userId)
 
-    const cleanRes = _.omit(user, ["password_hash"])
-    res.status(200).json({ user: cleanRes })
+    // const cleanRes = _.omit(user, ["password_hash"])
+    // res.status(200).json({ user: cleanRes })
+    res.status(200).json({
+      user: {
+        "id": "usr_01GXR24DFGBDQ8E16FH8W3FC3V",
+        "created_at": "2023-04-11T11:45:02.928Z",
+        "updated_at": "2023-04-11T11:45:02.928Z",
+        "deleted_at": null,
+        "role": "member",
+        "email": "admin@medusa-test.com",
+        "first_name": null,
+        "last_name": null,
+        "api_token": null,
+        "metadata": null
+      }
+    });
   } catch (err) {
     res.sendStatus(400)
   }

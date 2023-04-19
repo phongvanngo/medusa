@@ -461,8 +461,8 @@ const runMigrations = async rootPath => {
 
   const cliPath = sysPath.join(
     `node_modules`,
-    `@medusajs`,
-    `medusa-cli`,
+    `@novapo`,
+    `medusajs-medusa-cli`,
     `cli.js`
   )
 

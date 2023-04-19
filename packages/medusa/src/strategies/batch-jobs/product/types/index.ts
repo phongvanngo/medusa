@@ -10,7 +10,7 @@ import {
   SalesChannelService,
   ShippingProfileService,
 } from "../../../../services"
-import { FileService } from "medusa-interfaces"
+import { FileService } from "novapo-medusa-interfaces"
 import { FlagRouter } from "../../../../utils/flag-router"
 import { EntityManager } from "typeorm"
 import { IFileService } from "../../../../interfaces"

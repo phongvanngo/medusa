@@ -52,7 +52,7 @@ module.exports = {
       let proc
       try {
         proc = execa(
-          `./node_modules/@medusajs/medusa/cli.js`,
+          `./node_modules/@novapo/medusajs-medusa/cli.js`,
           [`user`, `--id`, auth.user.id, `--email`, auth.user.email],
           {
             env: {
@@ -130,7 +130,7 @@ module.exports = {
     })
 
     if (argv.develop) {
-      const proc = execa(`./node_modules/@medusajs/medusa/cli.js`, [`develop`])
+      const proc = execa(`./node_modules/@novapo/medusajs-medusa/cli.js`, [`develop`])
       proc.stdout.pipe(process.stdout)
       proc.stderr.pipe(process.stderr)
       await proc

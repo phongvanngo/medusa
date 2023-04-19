@@ -1,5 +1,5 @@
 import { EntityManager } from "typeorm"
-import { FileService } from "medusa-interfaces"
+import { FileService } from "novapo-medusa-interfaces"
 
 import {
   BatchJobService,

@@ -1,7 +1,7 @@
 import { Readable, PassThrough } from "stream"
 import { EntityManager } from "typeorm"
 
-import { FileService } from "medusa-interfaces"
+import { FileService } from "novapo-medusa-interfaces"
 import { MockManager } from "medusa-test-utils"
 
 import { User } from "../../../../models"

@@ -1,4 +1,4 @@
-import { BaseService } from "medusa-interfaces"
+import { BaseService } from "novapo-medusa-interfaces"
 
 import { LineItem } from "../models/line-item"
 import { Region } from "../models/region"

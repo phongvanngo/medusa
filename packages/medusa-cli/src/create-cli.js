@@ -23,6 +23,7 @@ const handlerP =
   }
 
 function buildLocalCommands(cli, isLocalProject) {
+  console.log("novapo medusa-cli");
   const defaultHost = `localhost`
   const defaultPort = `9000`
   const directory = path.resolve(`.`)
@@ -52,7 +53,7 @@ function buildLocalCommands(cli, isLocalProject) {
 
     try {
       const cmdPath = resolveCwd.silent(
-        `@medusajs/medusa/dist/commands/${command}`
+        `@novapo/medusajs-medusa/dist/commands/${command}`
       )
       return require(cmdPath).default
     } catch (err) {
@@ -316,8 +317,8 @@ function isLocalMedusaProject() {
       `./package.json`
     ))
     inMedusaProject =
-      (dependencies && dependencies["@medusajs/medusa"]) ||
-      (devDependencies && devDependencies["@medusajs/medusa"])
+      (dependencies && dependencies["@novapo/medusajs-medusa"]) ||
+      (devDependencies && devDependencies["@novapo/medusajs-medusa"])
   } catch (err) {
     /* ignore */
   }

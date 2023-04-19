@@ -1,3 +1,3 @@
-import logger from "@medusajs/medusa-cli/dist/reporter"
+import logger from "@novapo/medusajs-medusa-cli/dist/reporter"
 
 export default logger

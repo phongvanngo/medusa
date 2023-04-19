@@ -2,7 +2,7 @@ import {
   BaseFulfillmentService,
   BaseNotificationService,
   BasePaymentService,
-} from "medusa-interfaces"
+} from "novapo-medusa-interfaces"
 import { currencies } from "../utils/currencies"
 import { countries } from "../utils/countries"
 import { AwilixContainer } from "awilix"
