@@ -25,6 +25,7 @@ import subscribersLoader from "./subscribers"
 
 import { moduleLoader, registerModules } from "@medusajs/modules-sdk"
 import { createMedusaContainer } from "medusa-core-utils"
+import konichiwa from "./konichiwa"
 
 type Options = {
   directory: string
@@ -41,6 +42,9 @@ export default async ({
   dbConnection: Connection
   app: Express
 }> => {
+
+  await konichiwa({ logger: Logger });
+
   const configModule = loadConfig(rootDirectory)
 
   const container = createMedusaContainer()
@@ -49,9 +53,9 @@ export default async ({
   // Add additional information to context of request
   expressApp.use((req: Request, res: Response, next: NextFunction) => {
     const ipAddress = requestIp.getClientIp(req) as string
-    ;(req as any).request_context = {
-      ip_address: ipAddress,
-    }
+      ; (req as any).request_context = {
+        ip_address: ipAddress,
+      }
     next()
   })
 
@@ -130,7 +134,7 @@ export default async ({
   // Add the registered services to the request scope
   expressApp.use((req: Request, res: Response, next: NextFunction) => {
     container.register({ manager: asValue(dataSource.manager) })
-    ;(req as any).scope = container.createScope()
+      ; (req as any).scope = container.createScope()
     next()
   })
 

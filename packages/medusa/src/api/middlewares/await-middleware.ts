@@ -4,6 +4,7 @@ type handler = (req: Request, res: Response) => Promise<void>
 
 export default (fn: handler): RequestHandler => {
   return (req: Request, res: Response, next: NextFunction) => {
+    console.log("await middleware");
     if (req?.errors?.length) {
       return res.status(400).json({
         errors: req.errors,
