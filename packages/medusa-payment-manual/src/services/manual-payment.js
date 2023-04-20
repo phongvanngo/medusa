@@ -1,4 +1,4 @@
-import { PaymentService } from "medusa-interfaces"
+import { PaymentService } from "novapo-medusa-interfaces"
 
 class ManualPaymentService extends PaymentService {
   static identifier = "manual"
