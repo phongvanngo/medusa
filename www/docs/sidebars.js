@@ -653,12 +653,9 @@ module.exports = {
           },
         },
         {
-          type: "link",
-          href: "#",
+          type: "doc",
+          id: "modules/carts-and-checkout/cart",
           label: "Cart",
-          customProps: {
-            sidebar_is_soon: true,
-          },
         },
         {
           type: "doc",
@@ -720,12 +717,9 @@ module.exports = {
           },
         },
         {
-          type: "link",
-          href: "#",
+          type: "doc",
+          id: "modules/orders/orders",
           label: "Orders",
-          customProps: {
-            sidebar_is_soon: true,
-          },
         },
         {
           type: "link",
