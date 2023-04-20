@@ -1,4 +1,4 @@
-import { FulfillmentService } from "medusa-interfaces"
+import { FulfillmentService } from "novapo-medusa-interfaces"
 
 class ManualFulfillmentService extends FulfillmentService {
   static identifier = "manual"
