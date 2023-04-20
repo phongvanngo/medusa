@@ -1,6 +1,6 @@
 {
   "name": "novapo-medusa-fulfillment-manual",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A manual fulfillment provider for Medusa",
   "main": "index.js",
   "repository": {
