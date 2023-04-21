@@ -135,6 +135,12 @@ class ProductCollectionService extends TransactionBaseService {
       let productCollection = collectionRepo.create(collection)
       productCollection = await collectionRepo.save(productCollection);
 
+      console.log("novapo-log event:",{
+        first: ProductCollectionService.Events.CREATED, second: {
+          id: productCollection.id,
+        }
+      });
+
       await this.eventBus_
         .withTransaction(manager)
         .emit(ProductCollectionService.Events.CREATED, {
@@ -207,7 +213,7 @@ class ProductCollectionService extends TransactionBaseService {
         .withTransaction(manager)
         .emit(ProductCollectionService.Events.DELETED, {
           id: productCollection.id,
-      })
+        })
 
       return Promise.resolve()
     })
@@ -232,7 +238,7 @@ class ProductCollectionService extends TransactionBaseService {
         .withTransaction(manager)
         .emit(ProductCollectionService.Events.PRODUCTS_ADDED, {
           productCollection: productCollection,
-          productIds: productIds, 
+          productIds: productIds,
         })
 
       return productCollection
@@ -258,7 +264,7 @@ class ProductCollectionService extends TransactionBaseService {
         .withTransaction(manager)
         .emit(ProductCollectionService.Events.PRODUCTS_REMOVED, {
           productCollection: productCollection,
-          productIds: productIds, 
+          productIds: productIds,
         })
 
       return Promise.resolve()

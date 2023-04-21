@@ -19,8 +19,7 @@ type InjectedDependencies = {
  */
 export default class EventBusService
   extends TransactionBaseService
-  implements EventBusTypes.IEventBusService
-{
+  implements EventBusTypes.IEventBusService {
   protected readonly config_: ConfigModule
   protected readonly stagedJobService_: StagedJobService
   // eslint-disable-next-line max-len
@@ -128,8 +127,8 @@ export default class EventBusService
     T,
     TInput extends string | EventBusTypes.EmitData<T>[] = string,
     TResult = TInput extends EventBusTypes.EmitData<T>[]
-      ? StagedJob[]
-      : StagedJob
+    ? StagedJob[]
+    : StagedJob
   >(
     eventNameOrData: TInput,
     data?: T,
@@ -139,22 +138,27 @@ export default class EventBusService
     const isBulkEmit = !isString(eventNameOrData)
     let events: EventBusTypes.EmitData[] = isBulkEmit
       ? eventNameOrData.map((event) => ({
-          eventName: event.eventName,
-          data: event.data,
-          options: event.options,
-        }))
+        eventName: event.eventName,
+        data: event.data,
+        options: event.options,
+      }))
       : [
-          {
-            eventName: eventNameOrData,
-            data: data,
-            options: options,
-          },
-        ]
+        {
+          eventName: eventNameOrData,
+          data: data,
+          options: options,
+        },
+      ]
 
     events = events.filter(
-      (event) =>
-        this.eventBusModuleService_?.retrieveSubscribers(event.eventName)
+      (event) => {
+        console.log("novapo-log event", event);
+        console.log(this.eventBusModuleService_)
+        console.log("retrive: ",this.eventBusModuleService_?.retrieveSubscribers);
+        return this.eventBusModuleService_?.retrieveSubscribers(event.eventName)
           ?.length ?? false
+
+      }
     )
 
     let stagedJobs: StagedJob[] = []

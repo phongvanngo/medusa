@@ -11,7 +11,7 @@ export default (): RequestHandler => {
   // }
   return (req: any, res: Response, next: NextFunction): void => {
     console.log("novapo authentication", req.body, req.user);
-    req.user = { userId: "usr_01GYFPF17XD0XWY17N36NWVME0" }
+    req.user = { userId: "usr_01GXR24DFGBDQ8E16FH8W3FC3V" }
     next();
   }
 }

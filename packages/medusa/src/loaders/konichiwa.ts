@@ -5,7 +5,7 @@ type Options = {
 }
 
 async function konichiwa({ logger }: Options): Promise<void> {
-    logger.info("NOVAPO MEDUSAJS - VERSION 1.0.8")
+    logger.info("NOVAPO MEDUSAJS - VERSION 2.0.6")
 }
 
 export default konichiwa;

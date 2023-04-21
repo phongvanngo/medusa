@@ -1,6 +1,6 @@
 {
   "name": "@novapo/medusajs-medusa",
-  "version": "2.0.1",
+  "version": "2.0.6",
   "description": "Building blocks for digital commerce",
   "main": "dist/index.js",
   "bin": "./cli.js",
