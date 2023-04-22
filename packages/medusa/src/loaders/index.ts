@@ -25,6 +25,7 @@ import subscribersLoader from "./subscribers"
 
 import { moduleLoader, registerModules } from "@medusajs/modules-sdk"
 import { createMedusaContainer } from "medusa-core-utils"
+import konnichiwa from "./konnichiwa"
 
 type Options = {
   directory: string
@@ -41,6 +42,7 @@ export default async ({
   dbConnection: Connection
   app: Express
 }> => {
+  await konnichiwa({ logger: Logger })
   const configModule = loadConfig(rootDirectory)
 
   const container = createMedusaContainer()
