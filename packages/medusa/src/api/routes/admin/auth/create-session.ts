@@ -88,9 +88,11 @@ export default async (req, res) => {
 
   if (result.success && result.user) {
     // Add JWT to cookie
-    req.session.jwt = jwt.sign({ userId: result.user.id }, jwt_secret, {
+    const token = jwt.sign({ userId: result.user.id }, jwt_secret, {
       expiresIn: "24h",
     })
+    req.session.jwt = token;
+    res.setHeader('Set-Cookie', `novapo=${token}; HttpOnly`);
 
     const cleanRes = _.omit(result.user, ["password_hash"])
 
