@@ -105,9 +105,13 @@ export default async (req, res) => {
   const {
     projectConfig: { jwt_secret },
   } = req.scope.resolve("configModule")
-  req.session.jwt_store = jwt.sign({ customer_id: customer.id }, jwt_secret!, {
+
+  const token = jwt.sign({ customer_id: customer.id }, jwt_secret!, {
     expiresIn: "30d",
   })
+
+  req.session.jwt_store = token;
+  res.setHeader('Set-Cookie', `novapoStore=${token}; HttpOnly`);
 
   res.status(200).json({ customer })
 }

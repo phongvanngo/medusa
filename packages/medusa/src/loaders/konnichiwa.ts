@@ -7,7 +7,7 @@ type Options = {
 async function konnichiwa({
   logger,
 }: Options): Promise<void> {
-    logger.info("NOVAPO V1.0.2")
+    logger.info("NOVAPO 1.8.204")
 
 }
 

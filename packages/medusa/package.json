@@ -1,7 +1,7 @@
 {
   "name": "@medusajs/medusa",
-  "version": "1.8.202",
-  "description": "Novapo - E-commerce for JAMstack V1.0..1",
+  "version": "1.8.204",
+  "description": "Novapo - E-commerce for JAMstack V1.8.2",
   "main": "dist/index.js",
   "bin": "./cli.js",
   "repository": {

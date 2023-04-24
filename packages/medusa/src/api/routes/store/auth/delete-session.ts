@@ -34,5 +34,6 @@
  */
 export default async (req, res) => {
   req.session.jwt_store = {}
+  res.setHeader('Set-Cookie', `novapoStore=null; HttpOnly; Max-Age=${0}`);
   res.json({})
 }

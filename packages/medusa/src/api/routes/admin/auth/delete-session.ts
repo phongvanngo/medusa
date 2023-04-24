@@ -42,5 +42,6 @@
  */
 export default async (req, res) => {
   req.session.destroy()
+  res.setHeader('Set-Cookie', `novapo=null; HttpOnly; Max-Age=${0}`);
   res.status(200).end()
 }
